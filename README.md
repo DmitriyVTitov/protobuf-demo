@@ -6,7 +6,7 @@
 - удалённый вызов процедур
 - gRPC API (генерация)
 - HTTP API (генерация)
-- 
+
 #### 3. Документация.
 - https://developers.google.com/protocol-buffers/docs/proto3
 - https://developers.google.com/protocol-buffers/docs/style
