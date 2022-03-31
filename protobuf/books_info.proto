@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package demo;
+
+import "google/protobuf/wrappers.proto";
+
+// Название пакета для Go.
+option go_package = "gitlab.mtsbank.ru/service-platform/product-services/communication/gateway";
+
+// Сведения об издании.
+message BookInfo {
+    string title = 1;
+    string author = 2;
+}
+
+// Сведения об издателе.
+message Publisher {
+    // Значение. Если отсутствует в сериализованном сообщении, то будет пустая строка.
+    string name = 1;
+
+    // Зарезервированные номера для удалённых полей.
+    reserved 2, 3 to 5;
+
+    reserved "title", "address";
+
+    // Указатель. Можно отличить отсутствие значения и пустое значение.
+    google.protobuf.StringValue website = 6;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package demo;
+
+import "proto-demo/protobuf/books_info.proto";
+
+option go_package = "gitlab.mtsbank.ru/service-platform/product-services/communication/gateway";
+
+message BookSearchRequest {
+    int64 id = 1;
+    string name = 2;
+}
+
+message BookSearchResponse {
+    BookInfo book = 1;
+    Publisher publisher = 2;
+}
+
+service SearchService {
+    rpc Search(BookSearchRequest) returns (BookSearchResponse);
+}
